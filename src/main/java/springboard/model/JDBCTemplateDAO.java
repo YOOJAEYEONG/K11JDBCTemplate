@@ -188,7 +188,7 @@ public class JDBCTemplateDAO {
 		queryForObject()메소드는 반환결과가 0개이거나 2개 이상인 경우
 		예외가 발생하므로 반드시 예외처리를 해주는 것이 좋다.
 		 */
-		try {
+		try {template.queryForObject(sql, new BeanPropertyRowMapper<SpringBbsDTO>());
 			dto = template.queryForObject(sql, 
 					new BeanPropertyRowMapper<SpringBbsDTO>(SpringBbsDTO.class));
 			
